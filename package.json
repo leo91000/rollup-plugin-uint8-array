@@ -1,0 +1,38 @@
+{
+  "name": "rollup-plugin-uint8-array",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "A rollup plugin that export your file as raw UInt8Array",
+  "author": "Léo Coletta <contact@leo-coletta.fr>",
+  "license": "MIT",
+  "keywords": [
+    "rollup"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.2",
+    "rollup": "^3.17.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.35.2",
+    "@types/node": "^18.14.0",
+    "eslint": "^8.34.0",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2"
+  }
+}
