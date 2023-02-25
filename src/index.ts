@@ -45,3 +45,22 @@ export function rollupPluginFileUint8Array({ include, exclude }: PluginOptions):
     },
   }
 }
+
+export function rollupPluginB64({ include, exclude }: PluginOptions): Plugin {
+  const filter = createFilter(include, exclude)
+
+  return {
+    name: 'b64',
+    transform: (_code, id) => {
+      if (!filter(id))
+        return null
+
+      const buffer = readFileSync(id, { encoding: 'base64' })
+
+      return {
+        code: `const file = "${buffer}"; export default value;`,
+        map: { mappings: '' },
+      }
+    },
+  }
+}
