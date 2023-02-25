@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-uint8-array",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A rollup plugin that export your file as raw UInt8Array",
   "author": "Léo Coletta <contact@leo-coletta.fr>",
   "license": "MIT",
